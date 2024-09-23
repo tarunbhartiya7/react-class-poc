@@ -1,7 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import "./index.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Nav from "./components/Nav";
 import Loading from "./components/Loading";
 
@@ -29,6 +34,7 @@ class App extends React.Component {
                 <Route path="/" element={<Popular />} />
                 <Route path="/battle" element={<Battle />} />
                 <Route path="/results" element={<Results />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </React.Suspense>
           </div>
